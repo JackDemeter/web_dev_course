@@ -11,14 +11,16 @@
         <h1><%= date%></h1>
     </div>
     <div class="box">
-        <% for (var i = 0; i < list.length; i++){ %>
+        <% list.forEach(function (item){ %>
             <div class="item">
-                <input type ="checkbox">
-                <p><%= list[i] %></p>
+                <form method="post" action="/delete/<%=extension%>">
+                    <input type ="checkbox" name= "check" value="<%=item._id%>" onChange="this.form.submit()">
+                </form>
+                <p><%= item.action %></p>
             </div>
             
-        <% }; %>
-        <form method="post" action="/">
+        <% }); %>
+        <form method="post" action="/<%=extension%>">
             <input type="text" name="action" placeholder="New Item" autocomplete="off">
             <button type="submit" name="submit">+</button>
         </form>
