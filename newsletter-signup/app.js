@@ -36,9 +36,9 @@ app.post("/", function(req, res){
 
     const options = {
         method: 'POST',
-        auth: "name:1b8b84f66387f2f20d93e2a998fc80e7-us18"
+        auth: "name: "
     }
-    const URL = "https://us18.api.mailchimp.com/3.0/lists/e09b702177";
+    const URL = "https://us18.api.mailchimp.com/3.0/lists/ ";
     
     const request = https.request(URL, options, function(response) {
         response.on("data",function(data){
@@ -49,13 +49,6 @@ app.post("/", function(req, res){
     request.write(jsonData);
     request.end();
     
-
-
-    // API Key
-    // 1b8b84f66387f2f20d93e2a998fc80e7-us18
-
-    // List
-    // 
 
 });
 
