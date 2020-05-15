@@ -36,6 +36,7 @@ app.post("/", function(req, res){
 
     const options = {
         method: 'POST',
+
         auth: "name: ###" // insert auto key
     }
     const URL = "https://us18.api.mailchimp.com/3.0/lists/###"; // insert group ID
@@ -48,7 +49,6 @@ app.post("/", function(req, res){
     
     request.write(jsonData);
     request.end();
-
 });
 
 
